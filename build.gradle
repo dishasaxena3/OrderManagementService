@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.1.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'org.clearchannel'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.8'
+	// https://mvnrepository.com/artifact/com.jayway.restassured/rest-assured
+	testCompile group: 'com.jayway.restassured', name: 'rest-assured', version: '1.6'
+	
+}
